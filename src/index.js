@@ -11,12 +11,9 @@ class App extends React.Component {
   }
 
   getAQuestion = () => {
-    fetch("https://opentdb.com/api.php?amount=1")
+    fetch("https://opentdb.com/api.php?amount=1&type=multiple")
       .then(response => response.json())
       .then(question => {
-        console.log(question.results[0].question)
-        console.log(he.decode(question.results[0].question))
-
         this.setState({
           question: he.decode(question.results[0].question)
         })
@@ -27,7 +24,9 @@ class App extends React.Component {
     return (
       <Container className="App">
         <p>{this.state.question}</p>
-        <Button onClick={this.getAQuestion}>Get a Trivia Question</Button>
+        <Button fluid onClick={this.getAQuestion}>
+          Get a Trivia Question
+        </Button>
       </Container>
     )
   }
