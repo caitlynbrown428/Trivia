@@ -16,7 +16,9 @@ class App extends React.Component {
       .then(response => response.json())
       .then(question => {
         this.setState({
-          question: he.decode(question.results[0].question)
+          question: he.decode(question.results[0].question),
+          wrongAnswers: question.results[o].correct_answer,
+          answer: he.decode(answer.result[0].correct_answer)
         })
       })
   }
