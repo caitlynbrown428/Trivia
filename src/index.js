@@ -16,20 +16,13 @@ class App extends React.Component {
       .then(response => response.json())
       .then(question => {
         this.setState({
-          question: he.decode(question.results[0].question)
-        })
-      })
-  }
-
-  correctAnswer = () => {
-    fetch("https://opentdb.com/api.php?amount=1&type=multiple")
-      .then(response => response.json())
-      .then(answer => {
-        this.setState({
+          question: he.decode(question.results[0].question),
           answer: he.decode(answer.results[0].correct_answer)
         })
       })
   }
+
+
 
   render() {
     return (
