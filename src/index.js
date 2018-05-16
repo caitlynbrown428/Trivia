@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <Container className="App">
-        <p>{this.state.question}</p>
+        <p className="Question">{this.state.question}</p>
         <Button>
           <p>{this.state.answer}</p>
         </Button>
