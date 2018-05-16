@@ -24,16 +24,6 @@ class App extends React.Component {
       })
   }
 
-  correctAnswer = () => {
-    fetch("https://opentdb.com/api.php?amount=1&type=multiple")
-      .then(response => response.json())
-      .then(answer => {
-        this.setState({
-          answer: he.decode(answer.results[0].correct_answer)
-        })
-      })
-  }
-
   render() {
     return (
       <Container className="App">
