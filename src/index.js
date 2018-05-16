@@ -29,12 +29,19 @@ class App extends React.Component {
   render() {
     return (
       <Container className="App">
+<<<<<<< HEAD
+        <p>{this.state.question}</p>
+        <Button fluid>
+=======
         <p className="Question">{this.state.question}</p>
         <Button>
+>>>>>>> ef7efd7ba5826847d7abb5ad1d8e73a49fdc05b7
           <p>{this.state.answer}</p>
         </Button>
         {this.state.wrongAnswers.map((wrongAnswer, i) => (
-          <Button key={i}>{wrongAnswer}</Button>
+          <Button fluid key={i}>
+            {wrongAnswer}
+          </Button>
         ))}
 
         <Button fluid onClick={this.getAQuestion}>
