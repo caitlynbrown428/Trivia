@@ -16,7 +16,7 @@ class App extends React.Component {
     fetch("https://opentdb.com/api.php?amount=1&type=multiple")
       .then(response => response.json())
       .then(question => {
-        const answers = question.results[0].incorrect_answer
+        const answers = question.results[0].incorrect_answers
         answers.push(question.results[0].correct_answer)
 
         this.setState({
