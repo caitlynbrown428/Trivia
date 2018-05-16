@@ -28,11 +28,13 @@ class App extends React.Component {
     return (
       <Container className="App">
         <p>{this.state.question}</p>
-        <Button>
+        <Button fluid>
           <p>{this.state.answer}</p>
         </Button>
         {this.state.wrongAnswers.map((wrongAnswer, i) => (
-          <Button key={i}>{wrongAnswer}</Button>
+          <Button fluid key={i}>
+            {wrongAnswer}
+          </Button>
         ))}
 
         <Button fluid onClick={this.getAQuestion}>
