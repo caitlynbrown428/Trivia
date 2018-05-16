@@ -27,13 +27,8 @@ class App extends React.Component {
   render() {
     return (
       <Container className="App">
-<<<<<<< HEAD
-        <p>{this.state.question}</p>
-        <Button fluid>
-=======
         <p className="Question">{this.state.question}</p>
-        <Button>
->>>>>>> ef7efd7ba5826847d7abb5ad1d8e73a49fdc05b7
+        <Button fluid>
           <p>{this.state.answer}</p>
         </Button>
         {this.state.wrongAnswers.map((wrongAnswer, i) => (
