@@ -16,10 +16,12 @@ class App extends React.Component {
     fetch("https://opentdb.com/api.php?amount=1&type=multiple")
       .then(response => response.json())
       .then(question => {
+        const answers = question.results[0].incorrect_answer
+        answers.push(question.results[0].correct_answer)
+
         this.setState({
           question: he.decode(question.results[0].question),
-          wrongAnswers: question.results[0].incorrect_answers,
-          answer: he.decode(question.results[0].correct_answer)
+          answers: answers
         })
       })
   }
