@@ -8,7 +8,8 @@ import "./index.css"
 class App extends React.Component {
   state = {
     question: "Question goes here",
-    answer: "Correct answer goes here"
+    answer: "Correct answer goes here",
+    wrongAnswers: []
   }
 
   getAQuestion = () => {
@@ -17,7 +18,12 @@ class App extends React.Component {
       .then(question => {
         this.setState({
           question: he.decode(question.results[0].question),
+<<<<<<< HEAD
           answer: he.decode(question.results[0].correct_answer)
+=======
+          wrongAnswers: question.results[o].correct_answer,
+          answer: he.decode(answer.result[0].correct_answer)
+>>>>>>> 51fd821a48903c9f3b222389e4408cd98addc6bf
         })
       })
   }
