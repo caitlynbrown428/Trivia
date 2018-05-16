@@ -18,7 +18,7 @@ class App extends React.Component {
       .then(question => {
         this.setState({
           question: he.decode(question.results[0].question),
-          wrongAnswers: question.results[0].correct_answer,
+          wrongAnswers: question.results[0].incorrect_answers,
           answer: he.decode(question.results[0].correct_answer)
         })
       })
@@ -31,6 +31,9 @@ class App extends React.Component {
         <Button>
           <p>{this.state.answer}</p>
         </Button>
+        {this.state.wrongAnswers.map((wrongAnswer, i) => (
+          <Button key={i}>{wrongAnswer}</Button>
+        ))}
 
         <Button fluid onClick={this.getAQuestion}>
           Get a Question
