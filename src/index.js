@@ -23,7 +23,7 @@ class App extends React.Component {
   render() {
     return (
       <Container className="App">
-        <p>{this.state.question}</p>
+        <Segment>{this.state.question}<Segemnt>
         <Button fluid onClick={this.getAQuestion}>
           Get a Trivia Question
         </Button>
