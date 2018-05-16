@@ -7,7 +7,8 @@ import "./index.css"
 
 class App extends React.Component {
   state = {
-    question: "Question goes here"
+    question: "Question goes here",
+    answer: "Correct answer goes here"
   }
 
   getAQuestion = () => {
@@ -24,8 +25,11 @@ class App extends React.Component {
     return (
       <Container className="App">
         <p>{this.state.question}</p>
+        <Button>
+          <p>{this.state.answer}</p>
+        </Button>
         <Button fluid onClick={this.getAQuestion}>
-          Get a Trivia Question
+          Get Question
         </Button>
       </Container>
     )
