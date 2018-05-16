@@ -16,12 +16,10 @@ class App extends React.Component {
     fetch("https://opentdb.com/api.php?amount=1&type=multiple")
       .then(response => response.json())
       .then(question => {
-        const answers = question.results[0].incorrect_answers
-        answers.push(question.results[0].correct_answer)
-
         this.setState({
           question: he.decode(question.results[0].question),
-          answers: answers
+          wrongAnswers: question.results[0].incorrect_answers,
+          answer: he.decode(question.results[0].correct_answer)
         })
       })
   }
@@ -30,13 +28,11 @@ class App extends React.Component {
     return (
       <Container className="App">
         <p className="Question">{this.state.question}</p>
-        <Button fluid>
+        <Button>
           <p>{this.state.answer}</p>
         </Button>
         {this.state.wrongAnswers.map((wrongAnswer, i) => (
-          <Button fluid key={i}>
-            {wrongAnswer}
-          </Button>
+          <Button key={i}>{wrongAnswer}</Button>
         ))}
 
         <Button fluid onClick={this.getAQuestion}>
