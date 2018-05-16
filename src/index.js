@@ -18,8 +18,8 @@ class App extends React.Component {
       .then(question => {
         this.setState({
           question: he.decode(question.results[0].question),
-          wrongAnswers: question.results[o].correct_answer,
-          answer: he.decode(question.result[0].correct_answer)
+          wrongAnswers: question.results[0].correct_answer,
+          answer: he.decode(question.results[0].correct_answer)
         })
       })
   }
