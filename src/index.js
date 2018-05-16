@@ -8,7 +8,8 @@ import "./index.css"
 class App extends React.Component {
   state = {
     question: "Question goes here",
-    answer: "Correct answer goes here"
+    answer: "Correct answer goes here",
+    wrongAnswers: []
   }
 
   getAQuestion = () => {
