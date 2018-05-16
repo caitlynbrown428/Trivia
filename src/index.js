@@ -17,12 +17,10 @@ class App extends React.Component {
       .then(question => {
         this.setState({
           question: he.decode(question.results[0].question),
-          answer: he.decode(answer.results[0].correct_answer)
+          answer: he.decode(question.results[0].correct_answer)
         })
       })
   }
-
-
 
   render() {
     return (
@@ -34,9 +32,6 @@ class App extends React.Component {
 
         <Button fluid onClick={this.getAQuestion}>
           Get a Question
-        </Button>
-        <Button fluid onClick={this.correctAnswer}>
-          Get correct answer
         </Button>
       </Container>
     )
