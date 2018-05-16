@@ -2,13 +2,14 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { Button, Container } from "semantic-ui-react"
 import he from "he"
+import questionMark from "./images/questionMark.png"
 
 import "./index.css"
 
 class App extends React.Component {
   state = {
     question: "Question goes here",
-    answer: "Correct answer goes here",
+    answer: "",
     wrongAnswers: []
   }
 
@@ -27,16 +28,19 @@ class App extends React.Component {
   render() {
     return (
       <Container className="App">
+        <img alt="logo" src={questionMark} />
         <p className="Question">{this.state.question}</p>
-        <Button>
+        <Button fluid inverted color="green">
           <p>{this.state.answer}</p>
         </Button>
         {this.state.wrongAnswers.map((wrongAnswer, i) => (
-          <Button key={i}>{wrongAnswer}</Button>
+          <Button fluid key={i} inverted color="red">
+            {wrongAnswer}
+          </Button>
         ))}
 
         <Button fluid onClick={this.getAQuestion}>
-          Get a Question
+          Next
         </Button>
       </Container>
     )

@@ -11,3 +11,7 @@ body {
 .Question {
   font-size: 30px;
 }
+
+.green {
+  background-color: green;
+}
